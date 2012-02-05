@@ -15,7 +15,9 @@ setTimeout(function() {
                 childViews: ['photoListView'],
 
                 photoListView: Em.View.extend({
-
+                    templateName: 'photo-view-list',
+                    contentBinding: 'EME.PhotoListController.content',
+                    classNames: ['thumbnailViewList']
                 })
             })
         })

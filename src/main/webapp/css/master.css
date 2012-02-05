@@ -12,3 +12,18 @@
     bottom: 5px;
     z-index:1;
 }
+
+.thumbnailItem {
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin-right: 10px;
+}
+
+.thumbnailViewList {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    height: 100px;
+}
