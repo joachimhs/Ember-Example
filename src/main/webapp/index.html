@@ -19,6 +19,13 @@
     <script src="app/fixtureData.js" type="text/javascript" charset="utf-8"></script>
     <script src="app/stateManager.js" type="text/javascript" charset="utf-8"></script>
 
+    <script type="text/x-handlebars" data-template-name="photo-view-list">
+        {{#each content}}
+            <div class="thumbnailItem">
+                <img {{bindAttr src="imageUrl"}} style="width: 100%; height: 100%;"/>
+            </div>
+        {{/each}}
+    </script>
 </head>
 <body bgcolor="#555154">
     <div id="mainArea">

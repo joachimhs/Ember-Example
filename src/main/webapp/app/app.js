@@ -3,3 +3,5 @@ EME = Ember.Application.create({
         this._super();
     }
 });
+
+EME.store = DS.Store.create();
