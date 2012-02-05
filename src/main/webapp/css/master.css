@@ -1,0 +1,14 @@
+#mainArea {
+    border-radius: 25px;
+    -moz-bottomleft: 25px;
+    padding: 15px;
+    margin-top: 5px;
+    background: #fff;
+    text-align: left;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    z-index:1;
+}
