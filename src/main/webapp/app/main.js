@@ -17,7 +17,14 @@ EME.SelectedPhotoController = Em.Object.create({
 EME.ThumbnailPhotoView = Em.View.extend({
     click: function(evt) {
         EME.PhotoListController.set('selected', this.get('content'));
-    }
+    },
+
+    classNameBindings: "isSelected",
+
+    isSelected: function() {
+        console.log(EME.PhotoListController.get('selected') == this.get('content'));
+        return EME.PhotoListController.get('selected') == this.get('content');
+    }.property('EME.PhotoListController.selected')
 });
 
 EME.SelectedPhotoView = Em.View.extend({
