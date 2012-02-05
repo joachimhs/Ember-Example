@@ -21,9 +21,9 @@
 
     <script type="text/x-handlebars" data-template-name="photo-view-list">
         {{#each content}}
-            <div class="thumbnailItem">
-                <img {{bindAttr src="imageUrl"}} style="width: 100%; height: 100%;"/>
-            </div>
+            {{#view EME.ThumbnailPhotoView contentBinding="this" classNames="thumbnailItem"}}
+                <img {{bindAttr src="content.imageUrl"}} style="width: 100%; height: 100%;"/>
+            {{/view}}
         {{/each}}
     </script>
 </head>

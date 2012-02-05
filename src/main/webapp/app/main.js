@@ -13,3 +13,9 @@ EME.PhotoListController = Em.ArrayProxy.create({
 EME.SelectedPhotoController = Em.Object.create({
     contentBinding: 'EME.PhotoListController.selected'
 });
+
+EME.ThumbnailPhotoView = Em.View.extend({
+    click: function(evt) {
+        EME.PhotoListController.set('selected', this.get('content'));
+    }
+});
