@@ -27,3 +27,20 @@
     right: 10px;
     height: 100px;
 }
+
+.selectedPhotoItem {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 150px;
+    overflow: scroll;
+    border-radius: 25px;
+    -moz-bottomleft: 25px;
+}
+
+.selectedPhotoItem img {
+    border-radius: 25px;
+    -moz-bottomleft: 25px;
+    width: 100%;
+}

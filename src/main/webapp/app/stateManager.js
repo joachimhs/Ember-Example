@@ -12,12 +12,18 @@ setTimeout(function() {
             },
 
             view: Em.ContainerView.create({
-                childViews: ['photoListView'],
+                childViews: ['photoListView', 'selectedPhotoView'],
 
                 photoListView: Em.View.extend({
                     templateName: 'photo-view-list',
                     contentBinding: 'EME.PhotoListController.content',
                     classNames: ['thumbnailViewList']
+                }),
+
+                selectedPhotoView: Em.View.extend({
+                    templateName: 'selected-photo',
+                    contentBinding: 'EME.SelectedPhotoController.content',
+                    classNames: ['selectedPhoto']
                 })
             })
         })

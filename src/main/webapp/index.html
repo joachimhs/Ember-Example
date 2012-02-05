@@ -26,6 +26,14 @@
             {{/view}}
         {{/each}}
     </script>
+
+    <script type="text/x-handlebars" data-template-name="selected-photo">
+        {{#with content}}
+            {{#view EME.SelectedPhotoView contentBinding="this" classNames="selectedPhotoItem"}}
+                <img {{bindAttr src="content.imageUrl"}}/>
+            {{/view}}
+        {{/with}}
+    </script>
 </head>
 <body bgcolor="#555154">
     <div id="mainArea">

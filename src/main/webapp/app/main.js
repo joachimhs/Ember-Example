@@ -19,3 +19,7 @@ EME.ThumbnailPhotoView = Em.View.extend({
         EME.PhotoListController.set('selected', this.get('content'));
     }
 });
+
+EME.SelectedPhotoView = Em.View.extend({
+
+});
