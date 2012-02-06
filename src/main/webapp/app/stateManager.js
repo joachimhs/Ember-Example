@@ -12,7 +12,7 @@ setTimeout(function() {
             },
 
             view: Em.ContainerView.create({
-                childViews: ['photoListView', 'selectedPhotoView'],
+                childViews: ['photoListView', 'controlButtoniew', 'selectedPhotoView'],
 
                 photoListView: Em.View.extend({
                     templateName: 'photo-view-list',
@@ -24,6 +24,11 @@ setTimeout(function() {
                     templateName: 'selected-photo',
                     contentBinding: 'EME.SelectedPhotoController.content',
                     classNames: ['selectedPhoto']
+                }),
+
+                controlButtoniew: Em.View.extend({
+                    templateName: 'control-button-view',
+                    classNames: 'controlButtons'
                 })
             })
         })

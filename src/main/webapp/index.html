@@ -35,6 +35,13 @@
             {{/view}}
         {{/with}}
     </script>
+
+    <script type="text/x-handlebars" data-template-name="control-button-view">
+        {{#view Ember.Button target="EME.PhotoListController" action="startSlideshow"}}Play{{/view}}
+        {{#view Ember.Button target="EME.PhotoListController" action="stopSlideshow"}}Stop{{/view}}
+        {{#view Ember.Button target="EME.PhotoListController" action="prevPhoto"}}Prev{{/view}}
+        {{#view Ember.Button target="EME.PhotoListController" action="nextPhoto"}}Next{{/view}}
+    </script>
 </head>
 <body bgcolor="#555154">
     <div id="mainArea">
