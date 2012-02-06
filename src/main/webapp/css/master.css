@@ -48,9 +48,20 @@ div.is-selected:after {
     height: 100px;
 }
 
+.selectedPhoto h1 {
+    text-decoration: none;
+    clear: left;
+    display: block;
+    padding: 0px;
+    margin: 0 0 0.2em 0;
+    border-bottom: 1px dashed #dba;
+    font-weight: bold;
+    text-align: center;
+}
+
 .selectedPhotoItem {
     position: absolute;
-    top: 10px;
+    top: 55px;
     left: 10px;
     right: 10px;
     bottom: 150px;

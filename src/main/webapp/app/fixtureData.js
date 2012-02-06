@@ -6,7 +6,7 @@ EME.generateImages = function() {
     EME.store.createRecord(EME.Photo,  { id: "5", imageTitle: 'Lizard', imageUrl: 'img/lizard.jpg'});
     EME.store.createRecord(EME.Photo,  { id: "6", imageTitle: 'Mountain 1', imageUrl: 'img/mountain.jpg'});
     EME.store.createRecord(EME.Photo,  { id: "7", imageTitle: 'Mountain 2', imageUrl: 'img/mountain2.jpg'});
-    EME.store.createRecord(EME.Photo,  { id: "8", imageTitle: 'Parnorama', imageUrl: 'img/panorama.jpg'});
+    EME.store.createRecord(EME.Photo,  { id: "8", imageTitle: 'Panorama', imageUrl: 'img/panorama.jpg'});
     EME.store.createRecord(EME.Photo,  { id: "9", imageTitle: 'Sheep', imageUrl: 'img/sheep.jpg'});
     EME.store.createRecord(EME.Photo,  { id: "10", imageTitle: 'Waterfall', imageUrl: 'img/waterfall.jpg'});
 }
