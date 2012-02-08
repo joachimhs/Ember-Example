@@ -1,5 +1,4 @@
 setTimeout(function() {
-    EME.generateImages();
 
     EME.stateManager = Ember.StateManager.create({
         rootElement: '#mainArea',

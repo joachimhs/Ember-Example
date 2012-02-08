@@ -1,8 +1,12 @@
 EME.Photo = DS.Model.extend({
     primaryKey: 'id',
     id: DS.attr('string'),
-    photoTitle: DS.attr('string'),
-    photoUrl: DS.attr('string')
+    imageTitle: DS.attr('string'),
+    imageUrl: DS.attr('string')
+});
+
+EME.Photo.reopenClass({
+    url: 'photos'
 });
 
 EME.PhotoListController = Em.ArrayProxy.create({
