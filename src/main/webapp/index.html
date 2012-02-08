@@ -31,7 +31,7 @@
         {{#with content}}
             <h1>{{imageTitle}}</h1>
             {{#view EME.SelectedPhotoView contentBinding="this" classNames="selectedPhotoItem"}}
-                <img {{bindAttr src="content.imageUrl"}}/>
+                <img id="selectedImage" {{bindAttr src="content.imageUrl"}}/>
             {{/view}}
         {{/with}}
     </script>

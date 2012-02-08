@@ -84,5 +84,40 @@ EME.ThumbnailPhotoView = Em.View.extend({
 });
 
 EME.SelectedPhotoView = Em.View.extend({
+    swipeOptions: {
+        direction: Em.OneGestureDirection.Left | Em.OneGestureDirection.Right,
+        cancelPeriod: 100,
+        numberOfRequiredTouches: 2
+    },
 
+    swipeEnd: function(recognizer) {
+        if (recognizer.swipeDirection === Em.OneGestureDirection.Left) {
+            EME.PhotoListController.nextPhoto();
+        } else if (recognizer.swipeDirection === Em.OneGestureDirection.Right) {
+            EME.PhotoListController.prevPhoto();
+        }
+    },
+
+    pinchChange: function(recognizer) {
+        var newScale = recognizer.get('scale');
+        var curScale = this.$().css('scale');
+
+        this.$("#selectedImage").css('scale', function(index, value) {
+            return newScale * value;
+        });
+    },
+
+    panOptions: {
+        numberOfRequiredTouches: 1
+    },
+
+    panChange: function(recognizer) {
+        var val = recognizer.get('translation');
+
+        this.$("#selectedImage").css({
+            zIndex: 10,
+            x: '%@=%@'.fmt((val.x < 0) ? '-' : '+', Math.abs(val.x)),
+            y: '%@=%@'.fmt((val.y < 0) ? '-' : '+', Math.abs(val.y))
+        });
+    }
 });
