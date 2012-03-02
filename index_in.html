@@ -1,0 +1,24 @@
+<script type="text/javascript">
+    touchMove = function(event) {
+        event.preventDefault();
+        return false;
+    }
+</script>
+
+<script type="text/x-handlebars"data-template-name="image-view-list">
+    {{#each content}}
+    {{#view SCT.PhotoView contentBinding="this" classNames="photoList"}}
+    <img {{bindAttr src="content.imageUrl"}} style="width: 100%; height: 100%;"/>
+    {{/view}}
+    {{/each}}
+</script>
+
+<script type="text/x-handlebars"data-template-name="image-view">
+    {{#with content}}
+    {{#view SCT.PhotoView contentBinding="this" classNames="photo"}}
+    <img {{bindAttr src="content.imageUrl"}}/>
+    {{/view}}
+    {{/with}}
+</script>
+
+<body bgcolor="#555154" ontouchmove="touchMove(event);">
