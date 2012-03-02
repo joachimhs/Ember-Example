@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>Ember.js Example Application</title>
+    <link rel="stylesheet" href="css/master.css" type="text/css" charset="utf-8">
+    <meta name="author" content="Joachim Haagen Skeie">
+    <script src="scripts/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/ember-0.9.4.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        BindingsExample = Ember.Application.create();
+
+        BindingsExample.Person = Ember.Object.create({
+            name: 'Joachim Haagen Skeie'
+        });
+
+        BindingsExample.Car = Ember.Object.create({
+            ownerBinding: 'BindingsExample.Person.name'
+        });
+    </script>
+</head>
+<body bgcolor="#555154">
+<div id="mainArea">
+    <script type="text/x-handlebars">
+        {{BindingsExample.Car.owner}}
+    </script>
+</div>
+</body>
+</html>
