@@ -1,0 +1,7 @@
+TODO: clarify setup of Ember-Example ... when deploying to a webserver and opening index.html, an XMLHttpRequest is issued to "someAddress/photos" . "photos" is set up in main.js:
+
+EME.Photo.reopenClass({
+    url: 'photos'
+});
+
+What is this XMLHttpRequest good for and what is expected to be served from this address?
