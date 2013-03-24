@@ -13,7 +13,7 @@
     z-index:1;
 }
 
-.thumbnailItem {
+img.thumbnailItem {
     width: 75px;
     height: 75px;
     float: left;
@@ -21,24 +21,11 @@
     cursor:pointer;
 }
 
-div.is-selected {
+img.thumbnailItem.is-selected {
     border: 2px solid #000;
     width: 100px;
     height: 100px;
 }
-div.is-selected:after {
-    content: '';
-    display:block;
-    position: relative;
-    width:0;
-    height:0;
-    bottom:126px;
-    left: 40px;
-    border-color: transparent transparent black transparent; /*border color should be same as div div background color*/
-    border-style: solid;
-    border-width: 10px;
-}
-
 
 .thumbnailViewList {
     position: absolute;

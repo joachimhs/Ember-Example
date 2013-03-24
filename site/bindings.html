@@ -6,28 +6,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>Ember.js Example Application</title>
+    <title>Ember.js Example Bindings</title>
     <link rel="stylesheet" href="css/master.css" type="text/css" charset="utf-8">
     <meta name="author" content="Joachim Haagen Skeie">
-    <script src="scripts/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="scripts/ember-0.9.4.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/handlebars-1.0.0.rc.3.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/ember.prod.20130324.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
         BindingsExample = Ember.Application.create();
 
-        BindingsExample.Person = Ember.Object.create({
+        BindingsExample.person = Ember.Object.create({
             name: 'Joachim Haagen Skeie'
         });
 
-        BindingsExample.Car = Ember.Object.create({
-            ownerBinding: 'BindingsExample.Person.name'
+        BindingsExample.car = Ember.Object.create({
+            ownerBinding: 'BindingsExample.person.name'
         });
     </script>
+
+    <script type="text/x-handlebars">
+        <div id="mainArea">{{BindingsExample.car.owner}}</div>
+    </script>
+
 </head>
 <body bgcolor="#555154">
-<div id="mainArea">
-    <script type="text/x-handlebars">
-        {{BindingsExample.Car.owner}}
-    </script>
-</div>
+
 </body>
 </html>
