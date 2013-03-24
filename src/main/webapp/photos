@@ -1,12 +1,12 @@
-[
-    { "id": 1, "imageTitle": "Bird", "imageUrl": "img/bird.jpg"},
-    { "id": "2", "imageTitle": "Dragonfly", "imageUrl": "img/dragonfly.jpg"},
-    { "id": "3", "imageTitle": "Fly", "imageUrl": "img/fly.jpg"},
-    { "id": "4", "imageTitle": "Frog", "imageUrl": "img/frog.jpg"},
-    { "id": "5", "imageTitle": "Lizard", "imageUrl": "img/lizard.jpg"},
-    { "id": "6", "imageTitle": "Mountain 1", "imageUrl": "img/mountain.jpg"},
-    { "id": "7", "imageTitle": "Mountain 2", "imageUrl": "img/mountain2.jpg"},
-    { "id": "8", "imageTitle": "Panorama", "imageUrl": "img/panorama.jpg"},
-    { "id": "9", "imageTitle": "Sheep", "imageUrl": "img/sheep.jpg"},
-    { "id": "10", "imageTitle": "Waterfall", "imageUrl": "img/waterfall.jpg"}
-]
+{ "photos": [
+    { "id": 1, "image_title": "Bird", "image_url": "img/bird.jpg"},
+    { "id": "2", "image_title": "Dragonfly", "image_url": "img/dragonfly.jpg"},
+    { "id": "3", "image_title": "Fly", "image_url": "img/fly.jpg"},
+    { "id": "4", "image_title": "Frog", "image_url": "img/frog.jpg"},
+    { "id": "5", "image_title": "Lizard", "image_url": "img/lizard.jpg"},
+    { "id": "6", "image_title": "Mountain 1", "image_url": "img/mountain.jpg"},
+    { "id": "7", "image_title": "Mountain 2", "image_url": "img/mountain2.jpg"},
+    { "id": "8", "image_title": "Panorama", "image_url": "img/panorama.jpg"},
+    { "id": "9", "image_title": "Sheep", "image_url": "img/sheep.jpg"},
+    { "id": "10", "image_title": "Waterfall", "image_url": "img/waterfall.jpg"}
+]}

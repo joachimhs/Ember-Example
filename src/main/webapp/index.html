@@ -1,52 +1,68 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
+        "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-	<title>Ember.js Example Application</title>
-	<link rel="stylesheet" href="css/master.css" type="text/css" charset="utf-8">
-	<meta name="author" content="Joachim Haagen Skeie">
-    <script src="scripts/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>Ember.js Example Application</title>
+    <link rel="stylesheet" href="css/master.css" type="text/css" charset="utf-8">
+    <meta name="author" content="Joachim Haagen Skeie">
+    <script src="scripts/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="scripts/jquery.transit.js" type="text/javascript" charset="utf-8"></script>
-    <script src="scripts/ember-0.9.4.js" type="text/javascript" charset="utf-8"></script>
-    <script src="scripts/ember-data-latest.js" type="text/javascript" charset="utf-8"></script>
-    <script src="scripts/ember-touch.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/handlebars-1.0.0.rc.3.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/ember-1.0.0-rc.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/ember-data-20130216.js" type="text/javascript" charset="utf-8"></script>
     <script src="app/app.js" type="text/javascript" charset="utf-8"></script>
-    <script src="app/main.js" type="text/javascript" charset="utf-8"></script>
-    <script src="app/fixtureData.js" type="text/javascript" charset="utf-8"></script>
-    <script src="app/stateManager.js" type="text/javascript" charset="utf-8"></script>
+    <script src="app/controllers/photo_controls_controller.js" type="text/javascript" charset="utf-8"></script>
+    <script src="app/controllers/photo_list_controller.js" type="text/javascript" charset="utf-8"></script>
+    <script src="app/controllers/selected_photo_controller.js" type="text/javascript" charset="utf-8"></script>
+    <script src="app/models/photo_model.js" type="text/javascript" charset="utf-8"></script>
+    <script src="app/router.js" type="text/javascript" charset="utf-8"></script>
 
-    <script type="text/x-handlebars" data-template-name="photo-view-list">
-        {{#each content}}
-            {{#view EME.ThumbnailPhotoView contentBinding="this" classNames="thumbnailItem"}}
-                <img {{bindAttr src="content.imageUrl"}} style="width: 100%; height: 100%;"/>
-            {{/view}}
-        {{/each}}
+    <script type="text/x-handlebars">
+        <div id="mainArea">
+            {{outlet}}
+        </div>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="selected-photo">
-        {{#with content}}
+    <script type="text/x-handlebars" id="photos/selectedPhoto">
+        {{controller}} - {{controller.content}}
+
+        <div id="selectedPhoto">
             <h1>{{imageTitle}}</h1>
-            {{#view EME.SelectedPhotoView contentBinding="this" classNames="selectedPhotoItem"}}
-                <img id="selectedImage" {{bindAttr src="content.imageUrl"}}/>
-            {{/view}}
-        {{/with}}
+            <div class="selectedPhotoItem">
+                <img id="selectedImage" {{bindAttr src="imageUrl"}}/>
+            </div>
+        </div>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="control-button-view">
-        {{#view Ember.Button target="EME.PhotoListController" action="startSlideshow"}}Play{{/view}}
-        {{#view Ember.Button target="EME.PhotoListController" action="stopSlideshow"}}Stop{{/view}}
-        {{#view Ember.Button target="EME.PhotoListController" action="prevPhoto"}}Prev{{/view}}
-        {{#view Ember.Button target="EME.PhotoListController" action="nextPhoto"}}Next{{/view}}
+
+    <script type="text/x-handlebars" id="photoControls">
+        <div class="controlButtons">
+            <button {{action playSlideshow}}>Play</button>
+            <button {{action stopSlideshow}}>Stop</button>
+            <button {{action prevPhoto}}>Prev</button>
+            <button {{action nextPhoto}}>Next</button>
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" id="photos">
+        <div>"{{controllers.photosSelectedPhoto}}"</div>
+        {{outlet}}
+        {{render photoControls}}
+
+        <div class="thumbnailViewList">
+            {{#each photo in controller}}
+            <div class="thumbnailItem">
+                {{#linkTo photos.selectedPhoto photo}}<img {{bindAttr src="photo.imageUrl"}} style="width: 100%; height: 100%;" />{{/linkTo}}
+            </div>
+            {{/each}}
+        </div>
     </script>
 </head>
 <body bgcolor="#555154">
-    <div id="mainArea">
-        <div>Disclamer: The photographs used for this example application is under Copyright to Joachim Haagen Skeie. You are allowed to use the photographs while going through this example application. The source code itself is released under the MIT licence.</div>
-    </div>
 
 </body>
 </html>
