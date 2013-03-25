@@ -2,7 +2,6 @@ EME.PhotosController = Ember.ArrayController.extend({
     needs: ['photosSelectedPhoto'],
 
     selectPhotoAction: function(photo) {
-        console.log('selectPhoto: ' + photo.get('id'));
         this.set('selectedPhoto', photo);
     },
 
@@ -11,7 +10,6 @@ EME.PhotosController = Ember.ArrayController.extend({
         if (!this.get('controllers.photosSelectedPhoto.content')) {
             this.transitionToRoute("photos.selectedPhoto", this.get('content.firstObject'));
         } else {
-            console.log('finding next photo');
             var selectedIndex = this.findSelectedItemIndex();
 
             if (selectedIndex >= (this.get('content.length') - 1)) {

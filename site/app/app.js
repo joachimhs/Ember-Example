@@ -1,5 +1,4 @@
-EME = Ember.Application.create({
-});
+EME = Ember.Application.create({});
 
 EME.store  = DS.Store.create({
     adapter:  "DS.RESTAdapter",

@@ -21,8 +21,6 @@ EME.PhotoControlsController = Ember.Controller.extend({
 
     nextPhoto: function() {
         console.log('nextPhoto');
-        console.log(this.get('controllers.photos'));
-        console.log(this.get('controllers.photosSelectedPhoto'));
         this.get('controllers.photos').nextPhoto();
     },
 

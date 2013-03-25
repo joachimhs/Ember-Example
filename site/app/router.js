@@ -1,6 +1,6 @@
 EME.Router.map(function() {
 	this.route("index", {path: "/"});
-    this.resource("photos", function() {
+    this.resource("photos", {path: "/photos"}, function() {
         this.route("selectedPhoto", {path: ":photo_id"})
     });
 });

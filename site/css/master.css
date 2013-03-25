@@ -35,7 +35,7 @@ img.thumbnailItem.is-selected {
     height: 100px;
 }
 
-.selectedPhoto h1 {
+#selectedPhoto h1 {
     text-decoration: none;
     clear: left;
     display: block;
@@ -48,7 +48,7 @@ img.thumbnailItem.is-selected {
 
 .selectedPhotoItem {
     position: absolute;
-    top: 55px;
+    top: 95px;
     left: 10px;
     right: 10px;
     bottom: 150px;
